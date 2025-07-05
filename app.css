@@ -23,13 +23,14 @@
 .table-theme-1 > * {
     background-color: var(--color-1);
     box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
 
     min-width: var(--tile-size);
     min-height: var(--tile-size);
 
     color: white;
     font-weight: 1000;
-    border-radius: 5px;
+    white-space: pre-wrap;
 }
 
 .table-theme-1 > * {

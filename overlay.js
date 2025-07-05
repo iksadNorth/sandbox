@@ -28,7 +28,7 @@ function removeFocusOverlay() {
 }
 
 // 사용 예시
-popFocusOverlay(document.querySelector('span:nth-child(1)'));
+popFocusOverlay(document.querySelector('span:nth-child(2)'));
 setTimeout(() => {
     removeFocusOverlay();
 }, 1000);
