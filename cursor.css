@@ -1,0 +1,29 @@
+:root {
+    /* 커서 */
+    --cursor-z: -100;
+    /* JS에 의해 동적으로 변경됨. */
+    --mouse-x: -9999px;
+    --mouse-y: -9999px;
+
+    /* 그레디언트 색 */
+    --glow-size: 100px;
+}
+
+/* 커서 요소 배치 */
+#cursor {
+    position: fixed;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: var(--cursor-z);
+}
+
+/* 커서 요소 스타일 */
+.glow {
+    height: var(--glow-size);
+    width: var(--glow-size);
+    border-radius: 50%;
+    background-color: lightgray;
+    background: radial-gradient(circle, lightgray 0%, transparent 70%);
+}

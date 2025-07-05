@@ -1,0 +1,8 @@
+/* 포커스 오버레이 스타일 */
+#focus-overlay {
+    display: var(--mask-display);
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    clip-path: var(--mask-clip-path);
+}
