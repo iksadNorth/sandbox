@@ -1,0 +1,43 @@
+/**
+ * form input text 스타일 정의
+ */
+*:has(input[type="text"]) {
+    position: relative;
+}
+
+*:has(input[type="text"]) > input[type="text"],
+*:has(input[type="text"]) > label {
+    position: absolute;
+    top: 0; left: 0;
+    padding: 1px 5px;
+    padding-top: 0.5rem;
+    border-radius: 4px;
+}
+*:has(input[type="text"]) > input[type="text"] {
+    z-index: 1;
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+    border: 1px solid #ccc;
+}
+*:has(input[type="text"]) > label {
+    z-index: 2;
+    font-size: 1rem;
+    color: gray;
+    transition: all 0.2s ease;
+}
+
+*:has(input[type="text"]:focus) > label,
+*:has(input[type="text"]:not(:placeholder-shown)) > label {
+    transform: translate(10%, -50%);
+    left: 3px;
+    
+    padding: 0px 2px;
+    font-size: 0.75rem;
+
+    background-color: white;
+    color: #007bff;
+}
+*:has(input[type="text"]:focus) > input[type="text"],
+*:has(input[type="text"]:not(:placeholder-shown)) > input[type="text"] {
+    border-color: #007bff;
+}
