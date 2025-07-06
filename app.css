@@ -3,6 +3,9 @@
 
     /* 기본 요소 스타일 */
     --tile-size: 75px;
+
+    /* 알림 요소 스타일 */
+    --dot-size: 10px;
 }
 
 /** 
@@ -74,4 +77,51 @@
 .table-theme-2 > * {
     padding: 10px;
     border-bottom: solid 1px lightgray;
+}
+
+/* Bedge UI */
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+}
+  
+.badge > img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px lightgray;
+}
+
+/* 깜빡이는 빨간 점 */
+.update-dot {
+    position: relative;
+}
+.update-dot::after {
+    content: '';
+    font-size: var(--dot-size);
+    text-align: center;
+    color: white;
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transform: translate(90%, -50%);
+
+    width: var(--dot-size);
+    height: var(--dot-size);
+    background: rgb(255, 86, 86);
+    border-radius: 50%;
+    
+    animation: dot-blink 1s step-end infinite;
+}
+
+/* 깜빡임 애니메이션 */
+@keyframes dot-blink {
+    50% {
+        opacity: 0;
+    }
 }
