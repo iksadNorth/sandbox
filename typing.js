@@ -1,27 +1,28 @@
 const typeInterval = 75;
 
-function type(container) {
-    const text = container.textContent;
-    container.textContent = '';
-    text.split('').forEach((char, i) => {
-        setTimeout(() => {
-            container.textContent += char;
-        }, typeInterval * i);
-    });
-    
-    setTimeout(() => {
-        container.classList.add('blink');
-        syncBlink();
-    }, 0);
+async function sleep(interval) {
+    return await new Promise(resolve => setTimeout(resolve, interval));
 }
 
-function syncBlink() {
+async function type(container) {
+    const text = container.textContent;
+    container.textContent = '';
+  
+    for (const char of text) {
+        container.textContent += char;
+        await sleep(typeInterval);
+    }
+  
+    container.classList.add('blink');
+    syncBlink();
+}
+
+async function syncBlink() {
     const arrElBlink = document.querySelectorAll('.blink');
     arrElBlink.forEach(el => el.classList.remove('blink'));
     
-    setTimeout(() => {
-        arrElBlink.forEach(el => el.classList.add('blink'));
-    }, 0);
+    await sleep(typeInterval * 2);
+    arrElBlink.forEach(el => el.classList.add('blink'));
 }
 
 const containers = document.querySelectorAll('.typewriter');
