@@ -41,6 +41,7 @@ input[type="checkbox"].form-input {
 *:has(input[type="checkbox"].form-input:checked) > label {
     background-color: #4caf50;
     text-align: left;
+    color: white;
 }
 *:has(input[type="checkbox"].form-input:checked) > label::after {
     transform: translate(calc(var(--switch-gap) + var(--switch-length)), -50%);
