@@ -1,0 +1,11 @@
+.typewriter::after {
+    content: "|";
+}
+.blink::after {
+    content: "|";
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { color: transparent }
+}
