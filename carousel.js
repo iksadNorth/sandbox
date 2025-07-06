@@ -1,36 +1,42 @@
-const carousel = document.querySelector('.carousel');
+document.querySelectorAll('.carousel').forEach((carousel) => {
+    // 1. wrapper 생성
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('carousel-wrapper');
 
-// 1. wrapper 생성
-const wrapper = document.createElement('div');
-wrapper.classList.add('carousel-wrapper');
+    // 2. 버튼 생성
+    const prevBtn = document.createElement('button');
+    const nextBtn = document.createElement('button');
+    prevBtn.className = 'carousel-btn prev';
+    nextBtn.className = 'carousel-btn next';
+    prevBtn.textContent = '‹';
+    nextBtn.textContent = '›';
 
-// 2. 버튼 생성
-const prevBtn = document.createElement('button');
-const nextBtn = document.createElement('button');
+    // 3. carousel wrap
+    carousel.parentNode.insertBefore(wrapper, carousel);
+    wrapper.appendChild(prevBtn);
+    wrapper.appendChild(carousel);
+    wrapper.appendChild(nextBtn);
 
-prevBtn.className = 'carousel-btn prev';
-nextBtn.className = 'carousel-btn next';
-
-prevBtn.textContent = '‹';
-nextBtn.textContent = '›';
-
-// 3. carousel 부모에 wrapper 삽입 → carousel 대체
-carousel.parentNode.insertBefore(wrapper, carousel);
-wrapper.appendChild(prevBtn);
-wrapper.appendChild(carousel);
-wrapper.appendChild(nextBtn);
-
-(function() {
+    // 4. 슬라이드 추적 및 동작 설정
     let index = 0;
-    const slides = document.querySelectorAll('.carousel > *');
+    const slides = carousel.children;
+    const total = slides.length;
 
-    document.querySelector('.next').addEventListener('click', () => {
-        index = (index + 1) % slides.length;
+    // 트랙처럼 보이게 설정 (필요 시)
+    carousel.style.display = 'flex';
+    carousel.style.transition = 'transform 0.3s ease';
+    Array.from(slides).forEach(slide => {
+        slide.style.flex = '0 0 100%';
+    });
+
+    // 버튼 이벤트
+    nextBtn.addEventListener('click', () => {
+        index = (index + 1) % total;
         carousel.style.transform = `translateX(-${index * 100}%)`;
     });
 
-    document.querySelector('.prev').addEventListener('click', () => {
-        index = (index - 1 + slides.length) % slides.length;
+    prevBtn.addEventListener('click', () => {
+        index = (index - 1 + total) % total;
         carousel.style.transform = `translateX(-${index * 100}%)`;
     });
-})();
+});
