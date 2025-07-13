@@ -9,13 +9,13 @@
 .form-input:has(input[type="text"]) > label {
     top: 0; left: 0;
     padding: 1px 5px;
-    padding-top: 0.5rem;
     border-radius: 4px;
 }
 .form-input:has(input[type="text"]) > input[type="text"] {
     position: relative;
     z-index: 1;
     font-size: 1rem;
+    padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     border: 1px solid #ccc;
 }
@@ -29,7 +29,7 @@
 
 .form-input:has(input[type="text"]:focus) > label,
 .form-input:has(input[type="text"]:not(:placeholder-shown)) > label {
-    transform: translate(10%, -50%);
+    transform: translate(10%, -100%);
     left: 3px;
     
     padding: 0px 2px;

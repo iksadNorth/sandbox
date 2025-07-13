@@ -1,0 +1,44 @@
+/**
+ * form input file 스타일 정의
+ */
+
+:root {
+    --after-text: '';
+}
+
+.form-input:has(input[type="file"]) {
+    display: inline-flex;
+}
+/* input 숨기기 */
+.form-input input[type="file"] {
+    position: absolute; 
+    opacity: 0; 
+    width: 0; height: 0;
+}
+  
+.form-input:has(input[type="file"]) label {
+    border: 2px dashed #999;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.form-input:has(input[type="file"]) label:hover {
+    background-color: #eef6ff;
+}
+
+.form-input:has(input[type="file"]) label:after {
+    display: flex;
+    content: var(--after-text);
+    color: red;
+
+    font-size: 0.7rem;
+    overflow: hidden;
+}
+
+.dragover {
+    background-color: #d0e7ff;
+    border-color: #3399ff;
+}

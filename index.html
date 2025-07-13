@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <div id="cursor" class="glow"></div>
@@ -65,16 +68,20 @@
         <img src="badge.png" alt="User Avatar">
         <span class="update-dot">iksadnorth 님</span>
     </div>
-
-    <div class="form-input">
+    <span class="form-input">
         <input type="text" id="name" name="name">
         <label for="name">이름</label>
-    </div>
+    </span>
 
-    <div class="form-input">
+    <span class="form-input">
         <input type="checkbox" id="agree" name="agree">
         <label for="agree">동의</label>
-    </div>
+    </span>
+
+    <span class="form-input">
+        <input type="file" id="picture" name="picture">
+        <label for="picture">사진</label>
+    </span>
 </body>
 
 <link rel="stylesheet" href="app.css">
@@ -99,4 +106,7 @@
 
 <link rel="stylesheet" href="carousel.css">
 <script src="carousel.js"></script>
+
+<link rel="stylesheet" href="filebox.css">
+<script src="filebox.js"></script>
 </html>
