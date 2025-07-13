@@ -5,4 +5,5 @@
     inset: 0;
     background: rgba(0, 0, 0, 0.6);
     clip-path: var(--mask-clip-path);
+    z-index: 10000;
 }

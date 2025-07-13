@@ -5,12 +5,12 @@
 }
 
 /* 숨겨진 checkbox */
-input[type="checkbox"].form-input {
+.form-input > input[type="checkbox"] {
     display: none;
 }
   
 /* 스위치 스타일을 label에 바로 적용 */
-*:has(input[type="checkbox"].form-input) > label {
+.form-input:has(input[type="checkbox"]) > label {
     display: inline-block;
     width:          calc(var(--switch-dia) + var(--switch-length));
     height:         var(--switch-dia);
@@ -25,7 +25,7 @@ input[type="checkbox"].form-input {
 }
   
 /* 토글 버튼 부분 */
-*:has(input[type="checkbox"].form-input) > label::after {
+.form-input:has(input[type="checkbox"]) > label::after {
     content: "";
     position: absolute;
     width:  var(--switch-dia);
@@ -38,11 +38,11 @@ input[type="checkbox"].form-input {
 }
   
 /* 체크 상태 반영 */
-*:has(input[type="checkbox"].form-input:checked) > label {
+.form-input:has(input[type="checkbox"]:checked) > label {
     background-color: #4caf50;
     text-align: left;
     color: white;
 }
-*:has(input[type="checkbox"].form-input:checked) > label::after {
+.form-input:has(input[type="checkbox"]:checked) > label::after {
     transform: translate(calc(var(--switch-gap) + var(--switch-length)), -50%);
 }

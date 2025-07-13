@@ -1,25 +1,25 @@
 /**
  * form input text 스타일 정의
  */
-*:has(input[type="text"].form-input) {
+.form-input:has(input[type="text"]) {
     position: relative;
 }
 
-*:has(input[type="text"].form-input) > input[type="text"],
-*:has(input[type="text"].form-input) > label {
+.form-input:has(input[type="text"]) > input[type="text"],
+.form-input:has(input[type="text"]) > label {
     top: 0; left: 0;
     padding: 1px 5px;
     padding-top: 0.5rem;
     border-radius: 4px;
 }
-*:has(input[type="text"].form-input) > input[type="text"] {
+.form-input:has(input[type="text"]) > input[type="text"] {
     position: relative;
     z-index: 1;
     font-size: 1rem;
     padding-bottom: 0.5rem;
     border: 1px solid #ccc;
 }
-*:has(input[type="text"].form-input) > label {
+.form-input:has(input[type="text"]) > label {
     position: absolute;
     z-index: 2;
     font-size: 1rem;
@@ -27,8 +27,8 @@
     transition: all 0.2s ease;
 }
 
-*:has(input[type="text"].form-input:focus) > label,
-*:has(input[type="text"].form-input:not(:placeholder-shown)) > label {
+.form-input:has(input[type="text"]:focus) > label,
+.form-input:has(input[type="text"]:not(:placeholder-shown)) > label {
     transform: translate(10%, -50%);
     left: 3px;
     
@@ -38,7 +38,7 @@
     background-color: white;
     color: #007bff;
 }
-*:has(input[type="text"].form-input:focus) > input[type="text"],
-*:has(input[type="text"].form-input:not(:placeholder-shown)) > input[type="text"] {
+.form-input:has(input[type="text"]:focus) > input[type="text"],
+.form-input:has(input[type="text"]:not(:placeholder-shown)) > input[type="text"] {
     border-color: #007bff;
 }

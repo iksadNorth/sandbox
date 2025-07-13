@@ -1,3 +1,3 @@
-document.querySelectorAll('input[type="text"].form-input').forEach(input => {
+document.querySelectorAll('.form-input > input[type="text"]').forEach(input => {
     input.setAttribute('placeholder', ' ');
 });
