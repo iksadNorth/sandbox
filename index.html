@@ -9,16 +9,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
-<div id="cursor" class="glow"></div>
+<!-- <div id="cursor" class="glow"></div> -->
 <div id="inertia-cursor" class="glow"></div>
 <div id="focus-overlay"></div>
 <div id="rightclick-menu" class="context-menu">
     <ul>
         <li onClick="handleClick(this);">알림 띄우기</li>
         <li onClick="hideToast();">알림 지우기</li>
+        <li onClick="runSpin();">spinner 띄우기</li>
+        <li onClick="removeSpin();">spinner 지우기</li>
     </ul>
 </div>
 <div id="toast" class="alert-box"></div>
+<div id="spinner"></div>
 
 <body>
     <div class="grid-pair table-theme-1">
@@ -124,5 +127,8 @@
 
 <link rel="stylesheet" href="toast.css">
 <script src="toast.js"></script>
+
+<link rel="stylesheet" href="spinner.css">
+<script src="spinner.js"></script>
 
 </html>

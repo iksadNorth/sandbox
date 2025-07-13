@@ -1,0 +1,23 @@
+#spinner > * {
+    position: fixed;
+    content: '';
+    top: 50vh; left: 50vw;
+    transform-origin: center;
+    height: var(--radius); width: var(--radius);
+
+    transform: rotate(calc(var(--i) * var(--unit-degree))) translate(0%, -200%);
+
+    z-index: 10000;
+    border-radius: 10000px;
+    background-color: black;
+
+    animation: fade 1s linear infinite;
+    animation-delay: calc(var(--i) * var(--unit-tiktok)); /* 1/8초씩 간격 */
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
