@@ -12,7 +12,7 @@
     background-color: black;
 
     animation: fade 1s linear infinite;
-    animation-delay: calc(var(--i) * var(--unit-tiktok)); /* 1/8초씩 간격 */
+    animation-delay: calc(var(--i) * var(--unit-tiktok));
 }
 
 @keyframes fade {
