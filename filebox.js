@@ -4,7 +4,7 @@ const fileLabel = document.querySelector('.form-input:has(input[type="file"]) la
 function setFile(files) {
     if (files.length <= 0) return;
     const name = files[0].name;
-    document.documentElement.style.setProperty('--after-text', `"${name}"`);
+    document.documentElement.style.setProperty('--file-text', `"${name}"`);
 }
 
 (function() {

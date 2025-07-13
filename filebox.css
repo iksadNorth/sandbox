@@ -31,7 +31,7 @@
 
 .form-input:has(input[type="file"]) label:after {
     display: flex;
-    content: var(--after-text);
+    content: var(--file-text);
     color: red;
 
     font-size: 0.7rem;
