@@ -12,6 +12,13 @@
 <div id="cursor" class="glow"></div>
 <div id="inertia-cursor" class="glow"></div>
 <div id="focus-overlay"></div>
+<div id="rightclick-menu" class="context-menu">
+    <ul>
+        <li onClick="handleClick(this);">알림 띄우기</li>
+        <li onClick="hideToast();">알림 지우기</li>
+    </ul>
+</div>
+<div id="toast" class="alert-box"></div>
 <body>
     <div class="grid-pair table-theme-1">
         <span>내용 1</span>
@@ -68,6 +75,7 @@
         <img src="badge.png" alt="User Avatar">
         <span class="update-dot">iksadnorth 님</span>
     </div>
+
     <span class="form-input">
         <input type="text" id="name" name="name">
         <label for="name">이름</label>
@@ -109,4 +117,10 @@
 
 <link rel="stylesheet" href="filebox.css">
 <script src="filebox.js"></script>
+
+<link rel="stylesheet" href="contextmenu.css">
+<script src="contextmenu.js"></script>
+
+<link rel="stylesheet" href="toast.css">
+<script src="toast.js"></script>
 </html>

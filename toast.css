@@ -1,0 +1,21 @@
+#toast {
+    position: fixed;
+    top: 0;
+    left: 50vw;
+    transform: translateX(-50%) translateY(-200%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 9999;
+}
+
+#toast.show {
+    transform: translateX(-50%) translateY(50px);
+}
+
+.alert-box {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    pointer-events: none;
+}
