@@ -90,10 +90,6 @@
 }
 
 .netflix {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     color: red;
     font-size: 20px;
     font-weight: bold;
@@ -108,10 +104,6 @@
 }
 
 .instagram {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     color: white;
     font-size: 20px;
     font-weight: bold;
