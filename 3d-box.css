@@ -1,0 +1,149 @@
+:root {
+    --box-x: 200px;
+    --box-y: 100px;
+    --box-z: 20px;
+}
+
+/* 3D 속성 설정 */
+.box {
+    display: inline-block;
+    width: var(--box-x); height: var(--box-y); 
+
+    position: relative;
+    top: calc( -0.25 * var(--box-y) ); left: var(--box-y);
+
+    transform-style: preserve-3d;
+    transform:  translate(-50%, -50%) 
+                rotateX(60deg) 
+                rotateY(0deg) 
+                rotateZ(-40deg)
+                translateZ( calc(-1 * var(--box-y) ) )
+                translateZ( 0px );
+}
+.box:hover {
+    transform:  translate(-50%, -50%) 
+                rotateX(60deg) 
+                rotateY(0deg) 
+                rotateZ(-40deg)
+                translateZ( calc(-1 * var(--box-y) ) )
+                translateZ( 10px );
+    transition: transform 1.0s ease-out;
+}
+
+/* 각 면 공통설정 */
+.box > *, 
+.box::after, 
+.box::before {
+    position: absolute;
+    top: 50%; left: 50%;
+}
+
+/* 앞뒤 */
+.box > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: var(--box-x); height: var(--box-y);
+    background: var(--color-xy);
+    transform:  translate(-50%, -50%) 
+                rotateX(0deg)  
+                translateZ(calc( var(--box-z) / 2 ));
+}
+
+/* 위아래 */
+.box::after {
+    content: '';
+    display: block;
+
+    width: var(--box-x); height: var(--box-z);
+    background: var(--color-zx);
+    transform:  translate(-50%, -50%) 
+                rotateX(-90deg) 
+                translateZ(calc( var(--box-y) / 2 ));
+}
+
+/* 좌우 */
+.box::before {
+    content: '';
+    display: block;
+
+    width: var(--box-z); height: var(--box-y);
+    background: var(--color-yz);
+    transform:  translate(-50%, -50%) 
+                rotateY(-90deg) 
+                translateZ(calc( var(--box-x) / 2 ));
+}
+
+/** 
+ * 브랜드 로고
+ * https://www.color-hex.com/color-palettes/popular.php
+ */
+.facebook {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+
+    --color-xy: #3b5998;
+    --color-yz: #dfe3ee;
+    --color-zx: #8b9dc3;
+
+    --box-x: 200px;
+    --box-y: 100px;
+    --box-z: 20px;
+}
+
+.netflix {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+
+    --color-xy: #000000;
+    --color-yz: #ff0000;
+    --color-zx: #800000;
+
+    --box-x: 200px;
+    --box-y: 100px;
+    --box-z: 20px;
+}
+
+.instagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+
+    --color-xy: radial-gradient(
+        circle at 0% 100%,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
+    --color-yz: radial-gradient(
+        circle at 100% 100%,
+        #feda75,
+        #fa7e1e,
+        #d62976
+    );
+    --color-zx: radial-gradient(
+        circle at 0% 0%,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
+
+    --box-x: 200px;
+    --box-y: 100px;
+    --box-z: 20px;
+}

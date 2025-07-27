@@ -39,6 +39,15 @@
     padding: 5px;
 }
 
+/** 
+ * 컨테이너 스타일 
+ * 단순 가로 나열
+ */
+.flex-row {
+    display: flex;
+    gap: 10px;
+}
+
 /* 테이블 요소 스타일 */
 .table-theme-1 {
     gap: 5px;
