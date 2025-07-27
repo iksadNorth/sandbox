@@ -28,7 +28,9 @@ function removeFocusOverlay() {
 }
 
 // 사용 예시
-popFocusOverlay(document.querySelector('span:nth-child(2)'));
-setTimeout(() => {
-    removeFocusOverlay();
-}, 1000);
+function popFocusInContext(seletor) {
+    popFocusOverlay(document.querySelector(seletor));
+    setTimeout(() => {
+        removeFocusOverlay();
+    }, 1000);
+}

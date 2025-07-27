@@ -1,3 +1,7 @@
+:root {
+    --mask-display: none;
+}
+
 /* 포커스 오버레이 스타일 */
 #focus-overlay {
     display: var(--mask-display);
