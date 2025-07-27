@@ -21,13 +21,9 @@
                 translateZ( 0px );
 }
 .box:hover {
-    transform:  translate(-50%, -50%) 
-                rotateX(60deg) 
-                rotateY(0deg) 
-                rotateZ(-40deg)
-                translateZ( calc(-1 * var(--box-y) ) )
-                translateZ( 10px );
-    transition: transform 1.0s ease-out;
+    transform: translate(-50%, 0%) scale(0.9);
+    top: unset;
+    transition: all 0.7s ease-out;
 }
 
 /* 각 면 공통설정 */
@@ -88,7 +84,7 @@
     --color-yz: #dfe3ee;
     --color-zx: #8b9dc3;
 
-    --box-x: 200px;
+    --box-x: 150px;
     --box-y: 100px;
     --box-z: 20px;
 }
@@ -106,7 +102,7 @@
     --color-yz: #ff0000;
     --color-zx: #800000;
 
-    --box-x: 200px;
+    --box-x: 150px;
     --box-y: 100px;
     --box-z: 20px;
 }
@@ -143,7 +139,7 @@
         #4f5bd5
     );
 
-    --box-x: 200px;
+    --box-x: 150px;
     --box-y: 100px;
     --box-z: 20px;
 }
